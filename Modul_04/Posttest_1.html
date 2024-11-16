@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perbedaan var, let, dan const</title>
+  </head>
+  <body>
+    <h1>Perbedaan var, let, dan const dalam Scope</h1>
+    <button onclick="testVar()">Test var</button>
+    <button onclick="testLet()">Test let</button>
+    <button onclick="testConst()">Test const</button>
+    <script>
+      function testVar() {
+        if (true) {
+          var x = 10;
+        }
+        alert("Nilai x dengan var: " + x);
+      }
+
+      function testLet() {
+        if (true) {
+          let y = 20;
+        }
+        try {
+          alert("Nilai y dengan let: " + y);
+        } catch (error) {
+          alert("Error: " + error.message);
+        }
+      }
+
+      function testConst() {
+        if (true) {
+          const z = 30;
+        }
+        try {
+          alert("Nilai z dengan const: " + z);
+        } catch (error) {
+          alert("Error: " + error.message);
+        }
+      }
+    </script>
+  </body>
+</html>

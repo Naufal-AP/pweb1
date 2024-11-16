@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latihan 01</title>
+    <style>
+      .alumni-list li {
+        margin: 5px 0;
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body style="background-color: white">
+    <h1>Fakultas Ilmu Komputer</h1>
+    <h2>Daftar Alumni</h2>
+    <!-- Input pencarian -->
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Cari alumni berdasarkan nama atau jurusan..."
+      oninput="filterAlumni()"
+      style="width: 100%; padding: 10px; margin-bottom: 20px"
+    />
+
+    <!-- Daftar alumni -->
+    <ul class="alumni-list" id="alumniList">
+      <li data-name="Andi Pratama" data-major="Sistem Informasi">
+        Andi Pratama - Sistem Informasi
+      </li>
+      <li data-name="Budi Santoso" data-major="Teknik Informatika">
+        Budi Santoso - Teknik Informatika
+      </li>
+      <li data-name="Citra Lestari" data-major="Desain Komunikasi Visual">
+        Citra Lestari - Desain Komunikasi Visual
+      </li>
+      <li data-name="Dewi Kurnia" data-major="Manajemen Informatika">
+        Dewi Kurnia - Manajemen Informatika
+      </li>
+      <li data-name="Eko Wijaya" data-major="Teknik Sipil">
+        Eko Wijaya - Teknik Sipil
+      </li>
+    </ul>
+
+    <script>
+      // Fungsi untuk memfilter alumni
+      function filterAlumni() {
+        const input = document
+          .getElementById("searchInput")
+          .value.toLowerCase();
+        const alumniList = document
+          .getElementById("alumniList")
+          .getElementsByTagName("li");
+
+        for (let i = 0; i < alumniList.length; i++) {
+          const name = alumniList[i].getAttribute("data-name").toLowerCase();
+          const major = alumniList[i].getAttribute("data-major").toLowerCase();
+
+          // Cek apakah input sesuai dengan nama atau jurusan
+          if (name.includes(input) || major.includes(input)) {
+            alumniList[i].classList.remove("hidden");
+          } else {
+            alumniList[i].classList.add("hidden");
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
