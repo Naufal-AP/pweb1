@@ -16,7 +16,6 @@
   <body style="background-color: white">
     <h1>Fakultas Ilmu Komputer</h1>
     <h2>Daftar Alumni</h2>
-    <!-- Input pencarian -->
     <input
       type="text"
       id="searchInput"
@@ -25,7 +24,6 @@
       style="width: 100%; padding: 10px; margin-bottom: 20px"
     />
 
-    <!-- Daftar alumni -->
     <ul class="alumni-list" id="alumniList">
       <li data-name="Andi Pratama" data-major="Sistem Informasi">
         Andi Pratama - Sistem Informasi
@@ -45,7 +43,6 @@
     </ul>
 
     <script>
-      // Fungsi untuk memfilter alumni
       function filterAlumni() {
         const input = document
           .getElementById("searchInput")
@@ -58,7 +55,6 @@
           const name = alumniList[i].getAttribute("data-name").toLowerCase();
           const major = alumniList[i].getAttribute("data-major").toLowerCase();
 
-          // Cek apakah input sesuai dengan nama atau jurusan
           if (name.includes(input) || major.includes(input)) {
             alumniList[i].classList.remove("hidden");
           } else {
