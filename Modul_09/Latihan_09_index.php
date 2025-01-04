@@ -17,7 +17,7 @@
         }
 
         .jumbotron-bg {
-            background-image: url('fkom2.jpg');
+            background-image: url('Header-Home.jpg');
             /* URL gambar latar belakang */
             background-size: cover;
             background-position: center;
